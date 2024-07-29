@@ -8,4 +8,8 @@ module.exports = (server) => {
     server.patch("/admin/updateQuote/:id", quoteController.updateQuote);
 
     server.delete("/admin/deleteQuote/:id", quoteController.deleteQuote);
+
+    server.get("/admin/getAllQuotes", quoteController.getAllQuotes);
+
+    server.post("/admin/createQuote", quoteController.createQuote);
 }

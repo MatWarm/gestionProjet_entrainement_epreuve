@@ -1,4 +1,4 @@
-const apiBaseUrl = process.env.REACT_APP_API_URL;
+const apiBaseUrl = "http://localhost:3002";
 
 export const getTodaysBirthday = async () => {
   let queryUrl = `${apiBaseUrl}/getBirthday`;
@@ -14,7 +14,7 @@ export const getRandomQuote = async () => {
   let queryUrl = `${apiBaseUrl}/getQuote`;
 
   try {
-    console.log("ok")
+    console.log(await fetch(queryUrl))
     return await (await fetch(queryUrl)).json();
   } catch (error) {
     return false;

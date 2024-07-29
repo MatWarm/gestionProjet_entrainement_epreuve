@@ -10,8 +10,9 @@ const hostname = '0.0.0.0';
 const port = 3002;
 
 const server = express();
-server.use(myMiddleware);
 server.use(cors());
+
+server.use(myMiddleware);
 server.use(express.urlencoded());
 server.use(express.json());
 

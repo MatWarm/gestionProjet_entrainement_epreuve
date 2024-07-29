@@ -43,4 +43,5 @@ exports.veriflogin = async (req, res) => {
     }catch (error){
         res.status(500).json({ message: 'Failed to login', error: error.message });
     }
+
 }

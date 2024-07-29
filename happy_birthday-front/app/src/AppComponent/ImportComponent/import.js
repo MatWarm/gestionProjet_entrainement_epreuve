@@ -129,7 +129,7 @@ function Import({ open, onClose }) {
                     </Typography>
                 )}
             </DialogContent>
-            <DialogTitle>Import CSV quote</DialogTitle>
+            <DialogTitle>Import CSV quote  t</DialogTitle>
             <DialogContent>
                 <input
                     type="file"

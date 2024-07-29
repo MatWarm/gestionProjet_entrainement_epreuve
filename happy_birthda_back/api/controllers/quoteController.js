@@ -60,3 +60,13 @@ exports.deleteQuote = async (req, res) => {
     res.status(500).json({ message: 'Failed to delete quote', error: error.message });
   }
 }
+
+exports.createQuote = async (req, res) => {
+    try {
+        const data = req.body;
+        const newQuote = await quote.create(data);
+        res.status(201).json({ message: 'Quote created successfully!', quote: newQuote });
+    } catch (error) {
+        res.status(500).json({ message: 'Failed to create quote', error: error.message });
+    }
+}
