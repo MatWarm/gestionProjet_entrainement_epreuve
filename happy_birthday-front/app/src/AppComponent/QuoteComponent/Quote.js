@@ -5,6 +5,7 @@ function QuoteComponent(props) {
   const [Quote, setQuote] = useState();
 
   useEffect(() => {
+    console.log("teest")
     getRandomQuote()
       .then((result) => {
         return setQuote(result);

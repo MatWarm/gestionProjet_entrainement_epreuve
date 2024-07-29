@@ -31,8 +31,8 @@ exports.bulkImportBirthday = async (req, res) => {
         const birthdayList = req.body.birthdayList;
 
         await personBirthday.bulkCreate(birthdayList);
-
+        res.status(201).json({ message: 'Birthdays imported successfully!' });
     } catch (error) {
-        throw new Error(error.message);
+        res.status(500).json({ message: 'Failed to import birthdays', error: error.message });
     }
 }

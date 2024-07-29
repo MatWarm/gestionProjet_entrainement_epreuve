@@ -14,6 +14,7 @@ export const getRandomQuote = async () => {
   let queryUrl = `${apiBaseUrl}/getQuote`;
 
   try {
+    console.log("ok")
     return await (await fetch(queryUrl)).json();
   } catch (error) {
     return false;

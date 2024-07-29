@@ -4,11 +4,13 @@ var sequelize = require('./api/config/database');
 const personBirthday = require('./api/models/personBirthday');
 const quote = require('./api/models/quote');
 
+const myMiddleware = require('./api/middleware/middleware');
+
 const hostname = '0.0.0.0';
 const port = 3002;
 
 const server = express();
-
+server.use(myMiddleware);
 server.use(cors());
 server.use(express.urlencoded());
 server.use(express.json());
@@ -18,6 +20,9 @@ birthdayRoute(server);
 
 const quoteRoute = require('./api/routes/quoteRoute.js');
 quoteRoute(server);
+
+const userRoute = require('./api/routes/userRoute.js');
+userRoute(server);
 
 sequelize.sync().then(() => {
   server.listen(port, hostname, () => {
